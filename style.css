@@ -1,0 +1,100 @@
+body {
+  background-color: hsl(0, 0%, 86%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator__container {
+  width: 40%;
+  height: 60vh;
+  background-color: hsl(0, 0%, 92%);
+  border-radius: 10px;
+  border-bottom-right-radius: 30%;
+  padding: 1.8rem;
+}
+
+.form__section {
+  display: flex;
+  justify-content: space-around;
+  gap: 0.5rem;
+  width: 60%;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.input__box {
+  height: 1.5rem;
+  width: 4rem;
+  padding: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+}
+
+.input__box:hover {
+  border: 0.3px solid hsl(259, 100%, 65%);
+}
+
+.arrow__section {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+hr {
+  width: 100%;
+  background-color: red;
+  height: 0rem;
+}
+
+.arrow__svg {
+  background-color: hsl(0, 0%, 8%);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+}
+
+.main__section {
+  display: flex;
+  flex-direction: column;
+  font-size: 4rem;
+  font-weight: 900;
+}
+
+.age__main {
+  display: flex;
+}
+
+.figure {
+  color: hsl(259, 100%, 65%);
+}
+
+@media screen and (max-width: 758px) {
+  body {
+    height: 100vh;
+  }
+  .calculator__container {
+    width: 80%;
+    margin: 0 auto;
+
+    height: 70vh;
+  }
+
+  .form__section {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+    width: 100%;
+  }
+}
