@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" >
+    <title>Age Calculator</title>
+</head>
+<body>
+ 
+    <div class="calculator__container">
+        <form action="" class="form__section" id="form">
+            <div class="inputs">
+                <label class="tags">Day</label>
+                <input  maxlength="2" minlength="1"  type="number"  class="input__box" id= "day" 
+                placeholder="DD" min="1" max="31" required>
+            </div>
+            <div class="inputs">
+                <label class="tags">Month</label>
+                <input type="number" class="input__box" id= "month" placeholder="MM" 
+                min="1" max="12"  minlength="1" maxlength="12" required>
+            </div>
+            <div class="inputs">
+                <label class="tags">Year</label>
+                <input  maxlength="4" minlength="2"  type="number" class="input__box" id= "year" placeholder="YYYY" 
+                min="1900" max="2022" required>
+            </div>
+        </form>
+        <div class="arrow__section">
+            <hr>
+            <div class="arrow" id="arrow">
+                <img src="./assets/icon-arrow.svg" alt="arrow" class="arrow__svg">
+            </div>
+        </div>
+        <div class="main__section">
+            <div class="age__main">
+                <div class="figure" id="yearTag">--</div><span class="text">years</span>
+            </div>
+            <div class="age__main">
+                <div class="figure" id="monthTag">--</div><span class="text">months</span>
+            </div>
+            <div class="age__main">
+                <div class="figure" id="dayTag">--</div><span class="text">days</span>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    <script src="./main.js"></script>
+</body>
+</html>
