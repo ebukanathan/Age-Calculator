@@ -80,6 +80,11 @@ hr {
   color: hsl(259, 100%, 65%);
 }
 
+.dayValidation {
+  font-size: 0.5rem;
+  color: hsl(0, 68%, 47%);
+  display: none;
+}
 @media screen and (max-width: 758px) {
   body {
     height: 100vh;

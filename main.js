@@ -1,59 +1,73 @@
-const day = document.getElementById('day')
-const month = document.getElementById('month')
-const year = document.getElementById('year')
-const form = document.getElementById('form')
-const arrow = document.getElementById('arrow')
+const day = document.getElementById("day");
+const month = document.getElementById("month");
+const year = document.getElementById("year");
+const form = document.getElementById("form");
+const arrow = document.getElementById("arrow");
+const dayValidation = document.getElementsByClassName("dayValidation");
 
+arrow.addEventListener("click", (e) => {
+  e.preventDefault();
 
+  const today = new Date();
+  const thisYear = today.getFullYear();
+  const thisMonth = today.getMonth() + 1;
+  const thisDay = today.getDate();
 
-arrow.addEventListener('click',(e)=>{
-    e.preventDefault()
-    
+  const parseDay = Number.parseFloat(day.value);
+  const parseMonth = Number.parseFloat(month.value);
+  const parseYear = Number.parseFloat(year.value);
 
-const today = new Date()
-const thisYear = today.getFullYear()
-const thisMonth = today.getMonth() + 1
-const thisDay = today.getDate()
+  const displayYear = document.getElementById("yearTag");
+  const displayMonth = document.getElementById("monthTag");
+  const displayDay = document.getElementById("dayTag");
 
+  const yearly = () => {
+    let cYear = thisYear - parseYear;
+    if (parseMonth > thisMonth) {
+      displayYear.innerHTML = cYear - 1;
+    } else {
+      displayYear.innerHTML = cYear;
+    }
+  };
 
+  const monthly = () => {
+    let cMonth;
+    if (!parseMonth) {
+      cMonth = "00";
+      // return (displayMonth.innerHTML = "00");
+    } else if (parseMonth > thisMonth) {
+      cMonth = 12 - (parseMonth - thisMonth);
+      // return (displayMonth.innerHTML = cMonth);
+    } else {
+      cMonth = thisMonth - parseMonth;
+      // return (displayMonth.innerHTML = cMonth);
+    }
 
-const parseDay = Number.parseFloat(day.value)
-const parseMonth = Number.parseFloat(month.value)
-const parseYear = Number.parseFloat(year.value)
+    return parseDay > thisDay
+      ? (displayMonth.innerHTML = cMonth - 1)
+      : (displayMonth.innerHTML = cMonth);
+  };
 
-const  displayYear = document.getElementById('yearTag')
-const displayMonth = document.getElementById('monthTag')
-const displayDay = document.getElementById('dayTag')
+  const dayly = () => {
+    let cDay;
+    if (parseDay > thisDay) {
+      cDay = 31 + thisDay - parseDay;
+      return (displayDay.innerHTML = cDay);
+    } else {
+      cDay = thisDay - parseDay;
+      return (displayDay.innerHTML = cDay);
+    }
+  };
 
+  yearly();
+  monthly();
+  dayly();
+  month.value = 0;
+  year.value = 0;
+  day.value = 0;
 
-let  cYear = thisYear - parseYear
-displayYear.innerHTML = cYear
-
-let cMonth
-   
-if(!parseMonth){
-    return displayMonth.innerHTML='00'
-}
-else if (parseMonth > thisMonth){
-    cMonth = 12 - (parseMonth - thisMonth)
-   return displayMonth.innerHTML = cMonth
-}else{
-    cMonth = thisMonth - parseMonth
-    return displayMonth.innerHTML = cMonth
-    console.log(parseDay) 
-}
-
-let cDay
-
-if (parseDay > thisDay){
-      cDay = parseDay - thisDay
-    return displayDay.innerHTML = 13
- }else{
-   cDay = thisDay - parseDay
-    return displayDay.innerHTML = 13
-    console.log(cDay)
-}
-console.log(parseMonth)
-console.log('i am a winner')
-
-})        
+  // if (parseDay > 31) {
+  //   dayValidation.this.innerHTML = "<p>overtdose</p>";
+  // }
+  // console.log(thisDay);
+});
